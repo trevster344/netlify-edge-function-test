@@ -1,0 +1,22 @@
+{
+  "name": "netlify-edge-functions-test",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "netlify dev",
+    "deploy": "netlify deploy --prod",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.13.8"
+  },
+  "devDependencies": {
+    "@netlify/edge-functions": "^4.0.0",
+    "netlify-cli": "^27.8.0",
+    "typescript": "^7.0.2"
+  }
+}
