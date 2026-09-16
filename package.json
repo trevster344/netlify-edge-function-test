@@ -7,15 +7,20 @@
     "node": ">=22"
   },
   "scripts": {
+    "build": "tsc --noEmit",
     "dev": "netlify dev",
     "deploy": "netlify deploy --prod",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "hono": "^4.13.8"
+    "hono": "^4.13.8",
+    "pg": "^8.23.0"
   },
   "devDependencies": {
     "@netlify/edge-functions": "^4.0.0",
+    "@netlify/functions": "^6.0.0",
+    "@types/node": "^22.20.3",
+    "@types/pg": "^8.23.1",
     "netlify-cli": "^27.8.0",
     "typescript": "^7.0.2"
   }

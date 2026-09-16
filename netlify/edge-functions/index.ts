@@ -44,4 +44,5 @@ export default handle(app);
 
 export const config: Config = {
   path: "/*",
+  excludedPath: ["/api/db/*", "/api/my_new_table"],
 };
