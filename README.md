@@ -100,6 +100,12 @@ and deploys the edge function and Node function along with the site.
   instances, each holding its own pool; keep `PG_POOL_MAX` small.
 - **CPU time per request is 50 ms** for edge functions. Time waiting on I/O is not
   counted, but keep handlers small.
+- **Pin TypeScript to 5.x.** Netlify's build tooling (`@netlify/build` -> `ts-node`,
+  `zip-it-and-ship-it` -> `typescript-eslint`) loads TypeScript from `node_modules`,
+  and TypeScript 7's Go-native rewrite dropped the JS enum exports it reads. A
+  hoisted `typescript@7` makes the deploy fail with
+  `Cannot read properties of undefined (reading 'Intrinsic')`. Keep the `typescript`
+  devDependency at `5.9.3`.
 
 ## Notes
 

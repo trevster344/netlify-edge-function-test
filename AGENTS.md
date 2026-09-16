@@ -73,6 +73,11 @@ remembered values.
 - Prefer Aiven's connection pooler endpoint and keep `PG_POOL_MAX` small, since each
   function instance holds its own pool.
 - A push to the connected branch triggers the Netlify build and deploy.
+- Keep `typescript` pinned to `5.9.3`, not 7.x. Netlify's build tooling
+  (`@netlify/build` -> `ts-node`, `zip-it-and-ship-it` -> `typescript-eslint`) loads
+  TypeScript from `node_modules`; TypeScript 7's Go-native rewrite dropped the JS enum
+  exports it reads, so a hoisted `typescript@7` fails the deploy with
+  `Cannot read properties of undefined (reading 'Intrinsic')`.
 
 ## Conventions
 
